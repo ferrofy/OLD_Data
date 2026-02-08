@@ -1,0 +1,182 @@
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.TagButton {
+  padding: 10px 20px;
+  background-color: #45454572;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.TagButton:hover {
+  background-color: #282a2e00;
+}
+
+.TagButton.selected {
+  background-color: rgb(38, 255, 0);
+  color: black;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid orange;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  color: #000000;
+  background: linear-gradient(90deg, #90ff08, #cdff05);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+  margin: 10px;
+  width: 540px;
+  height: 450px;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.Btn img {
+  width: calc(100% - 40px);
+  height: auto;
+  object-fit: contain;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.Btn hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.Btn .discount {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .Btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Btn {
+    width: 48%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .Btn {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .Btn {
+    width: 18%;
+  }
+}
+
+.Popup {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+
+.PopupContent {
+  background-color: #333;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  color: #fff;
+}
+
+.CloseButton {
+  color: red;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.CloseButton:hover,
+.CloseButton:focus {
+  color: #00ddff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid orange;
+}
+
+.popup-text-title {
+  color: #ff007f;
+}
+
+.popup-text-value {
+  color: #0dff00;
+}
+
+.popup-red-text {
+  color: #ff007f;
+}
+
+.popup-green-text {
+  color: #0dff00;
+}
+
+.number-input {
+  width: 80%;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.placeholder {
+  color: #999;
+}

@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background-color: rgb(27, 27, 27);
+    font-family: "Courier New", monospace;
+    background: radial-gradient(circle at top, #003000, #000000);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

@@ -1,0 +1,10 @@
+header{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(209, 209, 209, 0.089);
+}
+
+header img{
+    height: 100px;
+    width: 100px;
+}

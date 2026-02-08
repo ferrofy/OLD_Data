@@ -1,0 +1,68 @@
+.Google {
+    color: #00ff00;
+}
+
+.Google_Search_Bar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    padding: 6px;
+    width: 100%;
+}
+
+#Google_Search_Input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #00ff00;
+    font-size: 18px;
+    padding: 10px 15px;
+    width: 80%;
+}
+
+#Google_Search_Input::placeholder {
+    color: #00ff00;
+}
+
+#Google_Search_Button {
+    background: #00ff00;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+    letter-spacing: 1px;
+    box-shadow: 0 0 8px #00ff00;
+    transition: 0.3s;
+}
+
+#Google_Search_Button:hover {
+    background: #00cc00;
+    box-shadow: 0 0 10px #00ff00, 0 0 15px #00ff00;
+}
+
+.Google_Lightning {
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(#00FF66, transparent);
+    opacity: 0;
+    animation: Lightning_Ani 0.25s linear;
+    filter: drop-shadow(0 0 10px #00FF66);
+    padding-top: 50%;
+}
+
+@keyframes Lightning_Ani {
+    0% {
+        opacity: 1;
+        transform: scaleY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleY(2);
+    }
+}

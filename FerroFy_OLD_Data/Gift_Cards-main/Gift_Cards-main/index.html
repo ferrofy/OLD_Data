@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards</title>
+    <link rel="stylesheet" href="CSS/Structure.css">
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    <header class="Header">Gift Cards</header>
+    <main class="Content">
+        <div class="Tags" id="tagsContainer"></div>
+        <div class="Buttons" id="buttonsContainer"></div>
+    </main>
+    <footer class="Footer">
+        <h1>Thank You</h1>
+        <h2>Want More Gift Cards ? <a href="https://wa.me/7009095794" class="popup-text-value">Click Here</a> </h2>
+    </footer>
+
+    <div id="popup" class="Popup">
+        <div class="PopupContent">
+            <span class="CloseButton" id="closePopup">&times;</span>
+            <div id="popupText">
+                <p class="popup-text-title">Min: <span class="popup-text-value" id="minLimit"></span></p>
+                <p class="popup-text-title">Discount: <span class="popup-text-value" id="discountValue"></span></p>
+                <hr>
+                <input type="number" id="inputAmount" class="number-input">
+                <p class="popup-red-text">To Buy: <span class="popup-green-text" id="toBuyAmount"></span></p>
+                <p class="popup-red-text">You Pay: <span class="popup-green-text" id="youPayAmount"></span></p>
+                <p class="popup-red-text">Profit: <span class="popup-green-text" id="profitAmount"></span></p>
+                <hr>
+                <p>To Buy Gift Card For Now Then Contact/Pay At - <a href="https://wa.me/7009095794" class="popup-text-value">Click Here</a></p>
+                <p>To Purchase Bulk <a href="https://chat.whatsapp.com/BGRo5HKoDXg1fsxXkGKV83" class="popup-text-value">Click Here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/index.js"></script>
+</body>
+</html>

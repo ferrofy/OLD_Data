@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/google-charts@2.0.0/dist/googleCharts.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Balance Portfolio</title>
+    <link rel="stylesheet" href="CSS/ATX.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ATX</h1>
+        <h2 id="Live_Balance"></h2>
+        <div class="button-section">
+            <button onclick="buttonAction(0)" class="red-button">₹ 10 Any Gift Card</button>
+            <button onclick="buttonAction(1)" class="green-button">₹ 100 Any Gift Card</button>
+            <button onclick="buttonAction(2)" class="blue-button">Free Fire 100 Diamonds</button>
+            <button onclick="buttonAction(3)" class="yellow-button">Free Fire 520 Diamonds</button>
+            <button onclick="buttonAction(4)" class="purple-button">BGMI 66 UC</button>
+            <button onclick="buttonAction(5)" class="orange-button">BGMI 80 UC</button>
+            <button onclick="buttonAction(6)" class="pink-button">BGMI Royle Pass</button>
+        </div>
+        <hr class="big-neon-hr">
+        <div class="transactions-section">
+            <h2>Transactions</h2>
+            <hr class="small-transparent-hr">
+            <p>Sold 8.53 SWEAT to VPX for ₹ 5.25</p>
+            <hr class="small-transparent-hr">
+            <p>Sold 1.25 SWEAT to VPX for ₹ 0.75</p>
+            <hr class="small-transparent-hr">
+            <p>Sold 5.25 SWEAT to VPX for ₹ 1.68</p>
+            <hr class="small-transparent-hr">
+            <p>Coming Soon...</p>
+            <hr class="small-transparent-hr">
+            <p></p>
+        </div>
+        <div id="popup" class="popup" onclick="closePopup(event)">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup(event)">&times;</span>
+                <h2 id="popup-button-name">Button Name</h2>
+                <br>
+                <div style="margin-top: 30px;"></div>
+                <div id="loading-bar" class="loading-bar"></div>
+                <br><br>
+                <p id="display-balance">Balance: ₹ 5.25</p>
+                <p id="total-needed"></p>
+                <p id="total-remaining"></p><br><br>
+                <p id="contact_vpx">To Get This Product <a id="contact_vpx_whatsapp" href="https://wa.me/7009095794">Click Here</a> <br><br> If You Want to Join Whasapp Group Then <a id="whatsapp_group" href="#">Comming Soon </a>, <br><br> Need Telegram <a id="telegram_group" href="#">Comming Soon</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="JS/ATX.js"></script>
+</body>
+</html>

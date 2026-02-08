@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+
+    <link rel="shortcut icon" href="Files/Images/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Files/CSS/Var_And_Body.css">
+    <link rel="stylesheet" href="Files/CSS/Header.css">
+    <link rel="stylesheet" href="Files/CSS/Main.css">
+    <link rel="stylesheet" href="Files/CSS/Footer.css">
+
+    <link rel="stylesheet" href="Files/CSS/Google_Search_Bar.css">
+    <link rel="stylesheet" href="Files/CSS/Chat_GPT_Search_Bar.css">
+    <link rel="stylesheet" href="Files/CSS/YT_Search_Bar.css">
+
+    <link rel="stylesheet" href="Files/CSS/Slider.css">
+    <link rel="stylesheet" href="Files/CSS/Bookmarks.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="Files/Images/Logo.png" alt="Logo">
+    </header>
+
+    <main>
+
+        <div class="Search_Slider_Wrapper">
+            <div class="All_Buttons_Slider">
+                <div class="Search_Slider_Menu">
+                    <button onclick="Show_Panel(0)">Google</button>
+                    <button onclick="Show_Panel(1)">ChatGPT</button>
+                    <button onclick="Show_Panel(2)">YT</button>
+                </div>
+            </div>
+            <div class="Search_Slider_Track" id="Search_Slider_Track">
+
+                <div class="Search_Panel">
+                    <div class="Google_Search_Bar" id="Google_Search_Box_Wrapper">
+                        <input type="text" id="Google_Search_Input" placeholder="Enter Text Here...">
+                        <button id="Google_Search_Button">Go...</button>
+                    </div>
+                    <p id="Google_Search_Result"></p>
+                </div>
+
+                <div class="Search_Panel">
+                    <div class="Chat_GPT_Search_Bar" id="Chat_GPT_Search_Box_Wrapper">
+                        <textarea id="Chat_GPT_Search_Input" placeholder="Enter Prompt Here..."></textarea>
+                        <button id="Chat_GPT_Search_Button">Go...</button>
+                    </div>
+                    <p id="Chat_GPT_Search_Result"></p>
+                </div>
+
+
+                <div class="Search_Panel">
+                    <div class="YT_Search_Bar" id="YT_Search_Box_Wrapper">
+                        <input type="text" id="YT_Search_Input" placeholder="Enter Text Here...">
+                        <button id="YT_Search_Button">Go...</button>
+                    </div>
+                    <p id="YT_Search_Result"></p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div id="Shortcut_Row"></div>
+    </footer>
+
+
+    <script src="Files/JS/Google_Lightning.js"></script>
+    <script src="Files/JS/Chat_GPT_Lightning.js"></script>
+    <script src="Files/JS/YT_Lightning.js"></script>
+
+    <script src="Files/JS/Google_Search_Bar.js"></script>
+    <script src="Files/JS/Chat_GPT_Search_Bar.js"></script>
+    <script src="Files/JS/YT_Search_Bar.js"></script>
+
+    <script src="Files/JS/Slider.js"></script>
+    <script src="Files/JS/Bookmarks.js"></script>
+
+</body>
+
+</html>

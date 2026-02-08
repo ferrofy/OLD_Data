@@ -1,0 +1,79 @@
+#Shortcut_Row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.Shortcut_Card {
+    position: relative;
+    text-align: center;
+    font-family: Arial;
+    color: #ffffff;
+    width: 100px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Shortcut_Card:hover{
+    background-color: #ffffff0e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.Shortcut_Icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.YT_Circle {
+    width: 62px;
+    height: 62px;
+    background: #2b2b2b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.YT_Play_Back {
+    width: 36px;
+    height: 24px;
+    background: #ff0000;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.YT_Play_Triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid white;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    margin-left: 2px;
+}
+
+.Shortcut_Card p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+@keyframes Pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
