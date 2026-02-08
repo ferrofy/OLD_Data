@@ -1,0 +1,9 @@
+header h1{
+    background-color: var(--Header_BG_Theme);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    color: black;
+}

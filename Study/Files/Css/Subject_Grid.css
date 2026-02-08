@@ -1,0 +1,69 @@
+.Page_Container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+.Subjects_Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.Subject_Card {
+    background: #111111;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #1f1f1f;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: Fade_Up 0.9s ease both;
+}
+
+.Subject_Card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 45px rgba(224, 175, 38, 0.2);
+}
+
+.Subject_Card h2 {
+    color: #e0af26;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.Subject_Card p {
+    font-size: 14px;
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+.Section_Title {
+    margin: 40px 0 18px;
+    font-size: 24px;
+    color: #e0af26;
+    border-left: 4px solid #e0af26;
+    padding-left: 12px;
+}
+
+.Upcoming {
+    opacity: 0.6;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.Upcoming::after {
+    content: "COMING SOON";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #e0af26;
+    color: #000;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.Upcoming:hover {
+    transform: none;
+    box-shadow: none;
+}

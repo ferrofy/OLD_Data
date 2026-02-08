@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ============================= -->
+  <!-- Don't Edit -->
+  <!-- ============================= -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="FerroFy">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FerroFy">
+  <meta property="og:image" content="https://ferrofy.github.io/Shop/Images/Yellow/Favicon.png">
+  <meta name="twitter:image" content="https://ferrofy.github.io/Shop/Images/Yellow/Favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#e0af26">
+  <meta name="twitter:site" content="@FerroFy">
+
+  <!-- ============================= -->
+  <!-- Files Inside Used -->
+  <!-- ============================= -->
+
+  <link rel="stylesheet" href="Style.css">
+  <link rel="shortcut icon" href="Images/Yellow/Favicon.png" type="image/x-icon">
+
+  <!-- ============================= -->
+  <!-- Edit -->
+  <!-- ============================= -->
+
+  <title>Shop | FerroFy</title>
+  <meta name="description" content="FerroFy Shop For Chitkara Students">
+  <meta name="keywords" content="FerroFy, FerroFy Shop, Vikrant Shop Page , Shop FerroFy , FerroFy Official Shop">
+  <link rel="canonical" href="https://ferrofy.github.io/Shop">
+
+  <!-- Open Graph Meta Tags (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Shop | FerroFy">
+  <meta property="og:description" content="FerroFy Shop For Chitkara Students">
+  <meta property="og:url" content="https://ferrofy.github.io/Shop">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:title" content="Shop | FerroFy">
+  <meta name="twitter:description" content="FerroFy Shop For Chitkara Students">
+</head>
+
+<body>
+  <div class="app">
+
+    <div class="tools">
+      <div class="search-sort">
+        <input id="Input_Search" placeholder="Search Here...">
+        <button id="Button_Search">Search</button>
+      </div>
+      <div class="Heading">
+        FerroFy
+      </div>
+      <div class="controls">
+        <div class="range-wrap">
+          <label>Max Price ₹<span id="Span_PriceVal">100</span></label>
+          <input id="Input_PriceRange" type="range" min="1" max="1000" value="500">
+        </div>
+        <button id="Button_OpenCart" class="cart-btn">🛒 Cart <span id="Cart_Badge" class="cart-badge">0</span></button>
+      </div>
+    </div>
+
+    <div class="Note">There Is No Guarantee That Items Are In Stock; It's Just An Estimate That They Could Be.</div>
+
+    <main>
+
+      <div class="hostel-box">
+        <h2 class="hostel-title">🏠 AryaBhata Hostel</h2>
+        <section id="Grid_Arya" class="product-grid"></section>
+      </div>
+
+      <div class="hostel-box">
+        <h2 class="hostel-title">🏠 Chanakya Hostel - Need A Seller Contact ---&gt; 7009095794</h2>
+        <section id="Grid_Chanakya" class="product-grid"></section>
+      </div>
+
+      <div class="hostel-box">
+        <h2 class="hostel-title">🏠 Sarabhai Hostel - Need A Seller Contact ---&gt; 7009095794</h2>
+        <section id="Grid_Sara" class="product-grid"></section>
+      </div>
+
+      <div class="hostel-box">
+        <h2 class="hostel-title">🏠 Gargi Hostel - Need A Seller Contact ---&gt; 7009095794</h2>
+        <section id="Grid_Gargi" class="product-grid"></section>
+      </div>
+
+      <div class="hostel-box">
+        <h2 class="hostel-title">🏠 Kalpana Hostel - Need A Seller Contact ---&gt; 7009095794</h2>
+        <section id="Grid_Kalpana" class="product-grid"></section>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="Div_CartDrawer" class="drawer">
+    <div class="drawer-header">
+      <h3>Your Cart 🛒</h3>
+      <span id="Button_CloseCart" class="drawer-close">&times;</span>
+    </div>
+    <div id="Div_CartList" class="cart-list"></div>
+    <div id="Div_CartEmpty" class="empty">Your cart is empty</div>
+    <div class="totals">Total: <span id="Span_CartTotal">₹0</span></div>
+    <button id="Button_Checkout" class="checkout">Buy Now 🚀</button>
+  </div>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modalImage" src="" alt="product image">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <p id="modalPrice"></p>
+      <p id="modalStock" class="stock-info"></p>
+      <button id="addToCartBtn" class="modal-add-btn">Add to Cart 🛒</button>
+    </div>
+  </div>
+
+  <div id="popupContainer" class="popup-container"></div>
+
+  <script type="module" src="Script.js"></script>
+
+</body>
+
+</html>

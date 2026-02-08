@@ -1,0 +1,278 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:#f9fafb;
+    display:flex;
+    justify-content:center;
+    padding:40px 15px;
+    animation:Fade_In 1s ease-in;
+}
+
+.Page_Container{
+    max-width:900px;
+    width:100%;
+}
+
+.Header_Box{
+    text-align:center;
+    margin-bottom:35px;
+    animation:Slide_Down 1s ease;
+}
+
+.Header_Box h1{
+    font-size:38px;
+    color:#e0af26;
+    text-shadow:0 0 12px rgba(224,175,38,0.3);
+}
+
+.Header_Box p{
+    margin-top:6px;
+    color:#9ca3af;
+}
+
+/* CARD */
+.Card{
+    background:#111111;
+    padding:25px;
+    border-radius:14px;
+    margin-bottom:25px;
+    border-left:5px solid #e0af26;
+    box-shadow:0 0 30px rgba(0,0,0,0.6);
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.Card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 45px rgba(224,175,38,0.15);
+}
+
+.Card h2{
+    color:#e0af26;
+    margin-bottom:10px;
+}
+
+.Card p{
+    line-height:1.7;
+}
+
+/* LIST */
+ul{
+    margin-left:22px;
+}
+
+li{
+    margin:8px 0;
+}
+
+/* HIGHLIGHT */
+.Highlight_Box{
+    background:#1a1a1a;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:25px;
+    border:1px dashed #e0af26;
+    color:#fde68a;
+    animation:Soft_Pulse 3s infinite;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+}
+
+th, td{
+    padding:12px;
+    border-bottom:1px solid #2a2a2a;
+    text-align:left;
+    transition:background 0.3s ease;
+}
+
+th{
+    color:#e0af26;
+    border-bottom:2px solid #e0af26;
+}
+
+tr:hover{
+    background:#1f1f1f;
+}
+
+/* QUOTE */
+.Quote_Box{
+    text-align:center;
+    font-style:italic;
+    padding:20px;
+    margin:30px 0;
+    color:#fde68a;
+    border-left:4px solid #e0af26;
+    animation:Fade_Up 1.2s ease;
+}
+
+/* FOOTER */
+.Footer_Box{
+    text-align:center;
+    margin-top:25px;
+    font-size:14px;
+    color:#6b7280;
+}
+
+/* SCROLL ANIMATION */
+.Animate{
+    animation:Fade_Up 0.9s ease both;
+}
+
+/* KEYFRAMES */
+@keyframes Fade_In{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes Slide_Down{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes Fade_Up{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes Soft_Pulse{
+    0%{box-shadow:0 0 0 rgba(224,175,38,0.0);}
+    50%{box-shadow:0 0 20px rgba(224,175,38,0.25);}
+    100%{box-shadow:0 0 0 rgba(224,175,38,0.0);}
+}
+
+
+/* ============================= */
+/* ULTRA MAX PRO RESPONSIVE MODE */
+/* ============================= */
+
+/* SMALL PHONES */
+@media (max-width:480px){
+
+    body{
+        padding:20px 10px;
+    }
+
+    .Header_Box h1{
+        font-size:26px;
+    }
+
+    .Header_Box p{
+        font-size:14px;
+    }
+
+    .Card{
+        padding:18px;
+        border-left:4px solid #e0af26;
+    }
+
+    .Card h2{
+        font-size:18px;
+    }
+
+    .Card p, li{
+        font-size:14px;
+        line-height:1.6;
+    }
+
+    .Highlight_Box{
+        font-size:14px;
+        padding:15px;
+    }
+
+    .Quote_Box{
+        font-size:14px;
+        padding:16px;
+    }
+
+    /* TABLE RESPONSIVE */
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    th, td{
+        font-size:14px;
+        padding:10px;
+    }
+}
+
+/* PHONES + SMALL TABLETS */
+@media (max-width:768px){
+
+    .Page_Container{
+        max-width:100%;
+    }
+
+    .Header_Box h1{
+        font-size:30px;
+    }
+
+    .Card{
+        margin-bottom:20px;
+    }
+
+    .Card:hover{
+        transform:none;
+    }
+}
+
+/* TABLETS + SMALL LAPTOPS */
+@media (max-width:1024px){
+
+    .Page_Container{
+        max-width:95%;
+    }
+
+    .Header_Box h1{
+        font-size:34px;
+    }
+}
+
+/* LARGE SCREENS */
+@media (min-width:1440px){
+
+    .Page_Container{
+        max-width:1100px;
+    }
+
+    body{
+        font-size:17px;
+    }
+}
+
+/* TOUCH OPTIMIZATION */
+@media (hover:none){
+    .Card:hover{
+        transform:none;
+        box-shadow:0 0 30px rgba(0,0,0,0.6);
+    }
+}
+
+/* SMOOTH TEXT RENDERING */
+body{
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}

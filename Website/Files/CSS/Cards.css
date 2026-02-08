@@ -1,0 +1,146 @@
+.Card {
+    Width: 90%;
+    Height: auto;
+    Border-Radius: 18px;
+    Padding: 15px;
+    Box-Sizing: Border-Box;
+    Position: Relative;
+    Transition: Transform 0.6s, Box-Shadow 0.6s;
+    Cursor: Pointer;
+    Overflow: Hidden;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.Card:hover {
+    Transform: RotateY(5deg) RotateX(-2.5deg) Scale(1.02);
+}
+
+.Crypto {
+    Background: linear-gradient(135deg, #161A1D, #2EDC0F);
+    Color: #39FF14;
+    Border: 1px solid #39FF14;
+    Box-Shadow:
+        0 0 20px rgba(57, 255, 20, 0.6),
+        inset 0 0 15px rgba(57, 255, 20, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    backdrop-filter: blur(6px);
+}
+
+#Crypto_Card_Title {
+    background: linear-gradient(135deg, #39FF14, #2EDC0F);
+    color: #000000;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.8);
+}
+
+.P2P_Lending {
+    Background: linear-gradient(135deg, #161A1D, #00D672);
+    Color: #00FF85;
+    Border: 1px solid #00FF85;
+    Box-Shadow:
+        0 0 22px rgba(0, 255, 133, 0.6),
+        inset 0 0 18px rgba(0, 255, 133, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    backdrop-filter: blur(6px);
+}
+
+#P2P_Lending_Card_Title {
+    background: linear-gradient(135deg, #00FF85, #00D672);
+    color: #000000;
+    box-shadow: 0 0 15px rgba(0, 255, 133, 0.8);
+}
+
+
+.FD {
+    Background: linear-gradient(135deg, #161A1D, #D966FF);
+    Color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow:
+        0 0 22px rgba(174, 0, 255, 0.6),
+        inset 0 0 18px rgba(174, 0, 255, 0.15);
+    backdrop-filter: blur(6px);
+}
+
+#FD_Card_Title {
+    Background: linear-gradient(135deg, #AE00FF, #D966FF);
+    Color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(174, 0, 255, 0.9);
+}
+
+
+.Forex {
+    Background: linear-gradient(135deg, #161A1D, #ff5959);
+    Color: #FF3131;
+    Border: 1px solid #FF3131;
+    Box-Shadow:
+        0 0 22px rgba(255, 49, 49, 0.6),
+        inset 0 0 18px rgba(255, 49, 49, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    backdrop-filter: blur(6px);
+}
+
+#Forex_Card_Title {
+    background: linear-gradient(135deg, #a50000, #ff0000);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 49, 49, 0.8);
+}
+
+.Gold {
+    Background: linear-gradient(135deg, #161A1D, #ffee03);
+    Color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow:
+        0 0 25px rgba(255, 215, 0, 0.4),
+        inset 0 0 15px rgba(255, 215, 0, 0.08);
+    backdrop-filter: blur(6px);
+}
+
+#Gold_Card_Title {
+    Background: linear-gradient(135deg, #FFD700, #ffee03);
+    Color: #000000;
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.9);
+}
+
+.Card_Title {
+    Border-Radius: 18px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.Shine::Before {
+    Content: "";
+    Position: Absolute;
+    Top: -50%;
+    Left: -120%;
+    Width: 60%;
+    Height: 200%;
+    Background: Linear-Gradient(120deg, Transparent, rgba(255, 255, 255, 0.45), Transparent);
+    Transition: 0.8s;
+}
+
+.Shine:hover::Before {
+    Left: 140%;
+}

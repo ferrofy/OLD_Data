@@ -1,0 +1,11 @@
+.Header_Box{
+    text-align:center;
+    margin-bottom:35px;
+    animation:Fade_Down 0.9s ease;
+}
+
+.Header_Box h1{
+    font-size:36px;
+    color:#e0af26;
+    text-shadow:0 0 12px rgba(224,175,38,0.3);
+}

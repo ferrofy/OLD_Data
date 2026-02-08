@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --Main_BG_Theme: #222222;
+    --Header_BG_Theme:aqua;
+    --Text_Color:#fff;
+}
+
+body {
+    background-color: var(--Main_BG_Theme);
+    color: var(--Text_Color);
+}
