@@ -1,0 +1,11 @@
+main {
+    padding: 90px 0 0 0;
+    color: var(--Text_On_Surface);
+    font-family: var(--Font_Body);
+    min-height: calc(100vh - 70px);
+    position: relative;
+}
+
+.Page_Placeholder {
+    min-height: 60vh;
+}

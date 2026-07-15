@@ -1,0 +1,17 @@
+{
+  "name": "ferrofy-buildx",
+  "version": "1.0.0",
+  "description": "FerroFy Smart Contract Deployment",
+  "scripts": {
+    "compile": "node node_modules/hardhat/internal/cli/cli.js compile",
+    "deploy:sepolia": "node node_modules/hardhat/internal/cli/cli.js run scripts/Deploy.js --network sepolia",
+    "node": "node node_modules/hardhat/internal/cli/cli.js node"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

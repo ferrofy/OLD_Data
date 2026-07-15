@@ -15,3 +15,13 @@ This Is Old Data Of What I Coded With Help of AI , May Include Huge Bugs , Just 
 # Can Anyone Can See / Use It ? 
 
 - yes
+
+# Why Restart Again 15/7/26
+
+- Apps / Software With In Depth Knowledge
+- More Documentation
+- No More Kiddos Things
+- May I Push One Time A Month ~ But Focous On Quality
+- Apps For Windows + Linux + Android + etc
+
+- O_O ~ 674 Files To Push XD

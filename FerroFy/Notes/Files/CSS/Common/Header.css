@@ -1,0 +1,469 @@
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--Primary_Dim) transparent;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--Primary_Dim);
+    border-radius: var(--Radius_Full);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--Primary_Glow);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Background);
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% -20%, rgba(199, 147, 248, 0.06), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 50%, rgba(122, 162, 247, 0.03), transparent),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(58, 223, 250, 0.02), transparent);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    height: 70px;
+    background: var(--Header_BG);
+    backdrop-filter: blur(var(--Glass_Blur_Strong)) saturate(1.8);
+    -webkit-backdrop-filter: blur(var(--Glass_Blur_Strong)) saturate(1.8);
+    justify-content: space-between;
+    font-family: var(--Font_Headline);
+    border-bottom: 1px solid var(--Glass_Border);
+    gap: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.4s var(--Ease_Smooth);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
+}
+
+header.Header_Scrolled {
+    height: 60px;
+    background: var(--Glass_BG_Strong);
+    box-shadow: var(--Shadow_MD), var(--Shadow_Glow_Primary);
+    border-bottom-color: var(--Glass_Border_Hover);
+}
+
+header h1 {
+    color: var(--Primary);
+    font-size: var(--Header_Font_Size);
+    font-family: var(--Font_Headline);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 20px var(--Primary_Glow);
+    transition: all 0.3s var(--Ease_Smooth);
+    white-space: nowrap;
+}
+
+header.Header_Scrolled h1 {
+    font-size: 17px;
+}
+
+header nav {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: large;
+    padding-right: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--Header_Nav_Color);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 6px 14px;
+    border-radius: var(--Radius_SM);
+    transition: all 0.3s var(--Ease_Smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+header a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--Primary_Dim), transparent);
+    border-radius: var(--Radius_SM);
+    opacity: 0;
+    transition: opacity 0.3s var(--Ease_Smooth);
+}
+
+header a:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+header a:hover::before {
+    opacity: 1;
+}
+
+#Header_Search_Bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--Outline);
+    background: var(--Header_Search_Bar_BG);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--Radius_Full);
+    padding: 0 16px;
+    transition: all 0.35s var(--Ease_Smooth);
+    height: 40px;
+}
+
+#Header_Search_Bar:focus-within {
+    border-color: var(--Primary);
+    box-shadow: 0 0 0 3px var(--Primary_Dim), var(--Shadow_Glow_Primary);
+    background: rgba(199, 147, 248, 0.04);
+}
+
+header input {
+    border: none;
+    background: transparent;
+    color: var(--Text_On_Surface);
+    height: 38px;
+    width: 180px;
+    font-family: var(--Font_Body);
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 0.01em;
+}
+
+header input::placeholder {
+    color: #5a5a66;
+    font-weight: 400;
+}
+
+header input:focus {
+    border: none;
+    outline: none;
+}
+
+.Search_Icon {
+    color: #5a5a66;
+    font-size: 13px;
+    transition: color 0.3s var(--Ease_Smooth);
+}
+
+#Header_Search_Bar:focus-within .Search_Icon {
+    color: var(--Primary);
+}
+
+#Heading_And_Nav {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#Search_And_Account {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-right: 20px;
+}
+
+header img {
+    height: 38px;
+    width: 38px;
+    border: 2px solid var(--Outline);
+    border-radius: 50%;
+    transition: all 0.35s var(--Ease_Smooth);
+    cursor: pointer;
+    object-fit: cover;
+}
+
+header img:hover {
+    border-color: var(--Primary);
+    box-shadow: 0 0 15px var(--Primary_Glow);
+    transform: scale(1.08);
+}
+
+#Menu_Bar {
+    display: none;
+}
+
+#Menu_Nav {
+    display: none;
+}
+
+#Menu_Side_Bar {
+    display: none;
+}
+
+#Menu_Overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+@media (max-width: 700px) {
+
+    #Search_And_Account {
+        display: none;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    #Menu_Bar {
+        display: flex;
+        flex-direction: column;
+        margin-right: 18px;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 5px;
+        width: 28px;
+        cursor: pointer;
+        z-index: 1100;
+        padding: 0;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #Menu_Bar.Menu_Open {
+        transform: rotateZ(-540deg);
+        z-index: 1100;
+    }
+
+    #Menu_Bar span {
+        transition: all 0.35s var(--Ease_Out_Expo);
+    }
+
+    #Menu_Bar_Lines_1 {
+        border: 1.5px solid var(--Primary);
+        border-radius: var(--Radius_Full);
+        width: 12px;
+        display: block;
+        box-shadow: 0 0 6px var(--Primary_Glow);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #Menu_Bar_Lines_2 {
+        border: 1.5px solid var(--Primary);
+        border-radius: var(--Radius_Full);
+        width: 22px;
+        display: block;
+        box-shadow: 0 0 6px var(--Primary_Glow);
+        transition: width 0.3s ease;
+    }
+
+    #Menu_Bar_Lines_3 {
+        border: 1.5px solid var(--Primary);
+        border-radius: var(--Radius_Full);
+        width: 12px;
+        display: block;
+        box-shadow: 0 0 6px var(--Primary_Glow);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #Menu_Bar:hover #Menu_Bar_Lines_1 {
+        transform: translate(-2px, 2px) rotateZ(-45deg);
+    }
+
+    #Menu_Bar:hover #Menu_Bar_Lines_3 {
+        transform: translate(-2px, -2px) rotateZ(45deg);
+    }
+
+    #Menu_Bar:hover #Menu_Bar_Lines_2 {
+        width: 18px;
+    }
+
+    #Menu_Bar.Menu_Open #Menu_Bar_Lines_1,
+    #Menu_Bar.Menu_Open #Menu_Bar_Lines_3 {
+        transform: none;
+    }
+
+    #Menu_Side_Bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 100vw;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 1050;
+        background: rgba(10, 10, 15, 0.95) !important;
+        backdrop-filter: blur(25px) saturate(2);
+        -webkit-backdrop-filter: blur(25px) saturate(2);
+        border: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        padding: 120px 20px 40px 20px;
+    }
+
+    #Menu_Side_Bar.Menu_Open {
+        opacity: 1;
+    }
+
+    #Menu_Overlay.Menu_Open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    #Menu_Profile_And_Search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 40px;
+        width: 100%;
+        animation: Menu_SlideUp 0.5s ease forwards;
+    }
+
+    #Menu_Profile_Logo {
+        height: 80px;
+        width: 80px;
+        border: 2px solid var(--Primary);
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 20px var(--Primary_Glow);
+        transition: transform 0.3s ease;
+    }
+
+    #Menu_Profile_Logo:hover {
+        transform: scale(1.1);
+    }
+
+    #Menu_Search_Bar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid var(--Primary_Dim);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: var(--Radius_Full);
+        padding: 0 20px;
+        height: 50px;
+        width: 80%;
+        max-width: 300px;
+        transition: all 0.3s ease;
+    }
+
+    #Menu_Search_Bar:focus-within {
+        border-color: var(--Primary);
+        box-shadow: 0 0 15px var(--Primary_Glow);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    #Menu_Search_Bar input {
+        border: none;
+        background: transparent;
+        color: var(--Text_On_Surface);
+        height: 100%;
+        width: 100%;
+        font-family: var(--Font_Body);
+        font-size: 15px;
+        outline: none;
+    }
+
+    #Menu_Search_Bar input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    #Menu_Search_Bar .Search_Icon {
+        color: var(--Primary);
+        font-size: 16px;
+    }
+
+    #Menu_Side_Bar #Menu_Hr {
+        display: none;
+    }
+
+    #Menu_Side_Bar.Menu_Open #Menu_Hr {
+        display: block;
+    }
+
+    #Menu_Nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+        animation: Menu_SlideUp 0.6s ease forwards;
+    }
+
+    #Menu_Nav a {
+        color: var(--Text_On_Surface);
+        text-decoration: none;
+        font-family: var(--Font_Headline);
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        padding: 12px 30px;
+        border-radius: var(--Radius_Full);
+        transition: all 0.3s var(--Ease_Smooth);
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #Menu_Nav a::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, var(--Primary_Dim), transparent);
+        opacity: 0;
+        transition: opacity 0.3s var(--Ease_Smooth);
+        border-radius: var(--Radius_Full);
+        z-index: -1;
+    }
+
+    #Menu_Nav a:hover {
+        color: #fff;
+        text-shadow: 0 0 10px var(--Primary_Glow);
+        transform: translateY(-2px);
+    }
+
+    #Menu_Nav a:hover::before {
+        opacity: 1;
+    }
+
+    @keyframes Menu_SlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

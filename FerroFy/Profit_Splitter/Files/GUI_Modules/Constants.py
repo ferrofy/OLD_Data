@@ -1,0 +1,27 @@
+Bg_Main          = "#06060F"
+Bg_Panel         = "#0C0C1A"
+Bg_Card          = "#111122"
+Bg_Input         = "#080814"
+Txt_Color        = "#E8E8FF"
+Txt_Muted        = "#7777AA"
+Accent_Gold      = "#FFD700"
+Accent_Gold_Dark = "#B8860B"
+Accent_Gold_Light = "#FFF5A0"
+Accent_Cyan      = "#00FFEA"
+Accent_Cyan_Dark = "#00B8AA"
+Accent_Purple    = "#9B59FF"
+Accent_Green     = "#39FF14"
+Accent_Red       = "#FF4444"
+Border_Color     = "#1A1A2E"
+Border_Glow      = "#252540"
+Glow_Gold        = "#1E1800"
+Glow_Cyan        = "#001E1C"
+Glow_Purple      = "#12003D"
+
+Font_Head  = ("Segoe UI", 30, "bold")
+Font_Tab   = ("Segoe UI", 12, "bold")
+Font_Main  = ("Segoe UI", 14)
+Font_Mono  = ("Consolas", 15)
+Font_Small = ("Segoe UI", 11)
+Font_Lg    = ("Segoe UI", 18, "bold")
+Font_Xl    = ("Segoe UI", 26, "bold")

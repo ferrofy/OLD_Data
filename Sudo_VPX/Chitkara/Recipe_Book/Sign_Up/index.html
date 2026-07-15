@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hungry Notebook - Sign Up / Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #140f18, #221b2c, #2e2140);
+      color: #fff;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      transition: .3s;
+    }
+
+    h1:hover {
+      transform: scale(1.4);
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav button {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      transition: .3s;
+    }
+
+    nav button:hover {
+      transform: scale(1.1);
+    }
+
+    main {
+      padding: 40px;
+      min-height: 65vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fade .8s ease;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .box {
+      width: 90%;
+      max-width: 420px;
+      padding: 35px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(7px);
+      border-radius: 22px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, .5);
+      transition: .5s;
+    }
+
+    .box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .in {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.09);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: .3s;
+    }
+
+    .in:focus {
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .switch {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      opacity: .9;
+    }
+
+    .switch span {
+      color: #ff8ac7;
+      cursor: pointer;
+    }
+
+    .switch span:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 onclick="location.href='../index.html'">Hungry Notebook</h1>
+
+    <nav>
+      <button onclick="location.href='../index.html'">Home</button>
+      <button onclick="location.href='../Sign_Up/index.html'">Sign Up</button>
+      <button onclick="location.href='../Feedback_And_QnA/index.html'">Feedback / QnA</button>
+      <button onclick="location.href='../Contact_Us/index.html'">Contact Us</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="box" id="signupBox">
+      <h2>Create Account</h2>
+
+      <input class="in" type="text" placeholder="Full Name">
+      <input class="in" type="email" placeholder="Email">
+      <input class="in" type="text" placeholder="Username">
+      <input class="in" type="password" placeholder="Password">
+      <input class="in" type="password" placeholder="Confirm Password">
+      <button class="btn">Sign Up</button>
+
+      <div class="switch">
+        Already have an account? <span onclick="showLogin()">Login</span>
+      </div>
+    </div>
+
+    <div class="box" id="loginBox" style="display:none;">
+      <h2>Login</h2>
+
+      <input class="in" type="text" placeholder="Username or Email">
+      <input class="in" type="password" placeholder="Password">
+      <button class="btn">Login</button>
+
+      <div class="switch">
+        New here? <span onclick="showSignUp()">Create Account</span>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function showLogin() {
+      signupBox.style.display = "none";
+      loginBox.style.display = "block";
+    }
+    function showSignUp() {
+      loginBox.style.display = "none";
+      signupBox.style.display = "block";
+    }
+  </script>
+
+</body>
+
+</html>

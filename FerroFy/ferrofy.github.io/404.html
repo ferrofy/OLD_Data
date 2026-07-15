@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | FerroFy</title>
+    <link rel="shortcut icon" href="Files/Images/Favicon/Main.png" type="image/x-icon">
+    <link rel="stylesheet" href="Files/CSS/404.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@600;700&family=Inter:wght@400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            <div class="terminal-header">
+                <div class="terminal-title">
+                    <div>
+                        <img src="Files/Images/Favicon/Main.png" alt="FerroFy Favicon">
+                    </div>
+                    <span>[ SYSTEM ERROR ]</span>
+                </div>
+                <div class="signal-dots">
+                    <span class="signal"></span>
+                    <span class="signal"></span>
+                    <span class="signal"></span>
+                </div>
+            </div>
+            <div class="content">
+                <h1 class="heading">&gt; ERROR 404</h1>
+                <p class="subhead">&gt; RESOURCE_NOT_FOUND</p>
+                <div class="text-block">
+                    <div class="log-box">
+                        <p>&gt; [NET] resolving domain endpoint... connection to website established.</p>
+                        <p>&gt; [HTTP] sending GET request for index resources... response received.</p>
+                        <p>&gt; [SCAN] attempting retrieval of HTML document from /index.html...</p>
+                        <p>&gt; [SCAN] attempting retrieval of stylesheet bundle from /assets/style.css...</p>
+                        <p>&gt; [SCAN] attempting retrieval of JavaScript runtime from /assets/app.js...</p>
+                        <p>&gt; parsing response headers: content integrity verification started.</p>
+                        <p>&gt; [RE] analyzing resource map: unresolved dependencies detected.</p>
+                        <p class="error">&gt; [FAIL] checksum mismatch while loading HTML payload.</p>
+                        <p>&gt; [FAIL] stylesheet retrieval interrupted during transfer sequence.</p>
+                        <p>&gt; [SEC] JavaScript execution environment returned invalid response.</p>
+                        <p>&gt; [HTTP] redirect signal detected from primary resource handler.</p>
+                        <p>&gt; [SYS] redirecting client session to /404.html endpoint...</p>
+                        <p>&gt; [HTTP] opening fallback resource: 404.html ... success.</p>
+                        <p class="error">&gt; [404] requested website resources could not be recovered.</p>
+                        <p>&gt; operation terminated.</p>
+                    </div>
+                    <div class="prompt">
+                        <p class="prompt-line">&gt; awaiting input <span class="cursor"></span></p>
+                        <div class="buttons">
+                            <a href="https://ferrofy.github.io" class="primary">[ EXECUTE: RETURN_TO_HOME ]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <span>STATUS: Working</span>
+        <span>LATENCY: 14ms</span>
+        <span>UPTIME: 99.9%</span>
+    </footer>
+
+    <script src="Files/JS/404.js"></script>
+</body>
+
+</html>

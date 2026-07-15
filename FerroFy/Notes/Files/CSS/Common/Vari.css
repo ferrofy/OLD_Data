@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --Primary: #C793F8;
+    --Primary_Glow: rgba(199, 147, 248, 0.35);
+    --Primary_Dim: rgba(199, 147, 248, 0.12);
+    --Secondary: #3adffa;
+    --Secondary_Glow: rgba(58, 223, 250, 0.3);
+    --Tertiary: #9bffce;
+    --Tertiary_Glow: rgba(155, 255, 206, 0.25);
+    --Error: #F86C81;
+    --Error_Dim: #d73357;
+    --Background: #09090b;
+    --Background_Alt: #0c0c0f;
+    --Surface: #141418;
+    --Surface_High: #1e1e24;
+    --Surface_Low: #000000;
+    --Outline: #2a2a30;
+    --Outline_Subtle: rgba(255, 255, 255, 0.06);
+    --Text_Muted: #a9b1d6;
+    --Text_On_Surface: #f0edf5;
+    --Hacker_Green: #05ff05;
+    --Page_Loc_Color: #ffa600;
+    --Red: rgb(255, 37, 37);
+    --Cyan: #1AA7C5;
+
+    --Font_Body: 'Inter', 'Outfit', sans-serif;
+    --Font_Headline: 'Outfit', 'Space Grotesk', sans-serif;
+    --Font_Mono: 'Fira Code', monospace;
+
+    --Glass_BG: rgba(14, 14, 18, 0.72);
+    --Glass_BG_Strong: rgba(10, 10, 14, 0.85);
+    --Glass_Border: rgba(255, 255, 255, 0.08);
+    --Glass_Border_Hover: rgba(199, 147, 248, 0.2);
+    --Glass_Blur: 20px;
+    --Glass_Blur_Strong: 30px;
+
+    --Footer_BG: rgba(10, 10, 14, 0.8);
+    --Header_Font_Size: 20px;
+    --Header_BG: rgba(10, 10, 14, 0.7);
+    --Header_Nav_Color: #878588;
+    --Header_Search_Bar_BG: rgba(255, 255, 255, 0.04);
+
+    --Card_BG_Color: rgba(20, 20, 28, 0.6);
+    --Card_Hover_Color: rgba(30, 30, 42, 0.8);
+    --Card_Border_Color: rgba(255, 255, 255, 0.07);
+    --Neon_Accent: #7aa2f7;
+    --Neon_Accent_Glow: rgba(122, 162, 247, 0.3);
+    --Accent_Green: #9ece6a;
+    --Accent_Green_Glow: rgba(158, 206, 106, 0.3);
+
+    --Ease_Out_Expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --Ease_Bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --Ease_Smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --Shadow_SM: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --Shadow_MD: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --Shadow_LG: 0 16px 48px rgba(0, 0, 0, 0.5);
+    --Shadow_Glow_Primary: 0 0 30px rgba(199, 147, 248, 0.15);
+    --Shadow_Glow_Accent: 0 0 30px rgba(122, 162, 247, 0.12);
+
+    --Radius_SM: 8px;
+    --Radius_MD: 14px;
+    --Radius_LG: 20px;
+    --Radius_XL: 28px;
+    --Radius_Full: 100px;
+}

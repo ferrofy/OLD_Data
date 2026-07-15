@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hungry Notebook - Feedback / QnA</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #140f18, #221b2c, #2e2140);
+      color: #fff;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    h1:hover {transform: scale(1.07);}
+
+    nav {display: flex; gap: 15px;}
+
+    nav button {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      transition: .3s;
+    }
+
+    nav button:hover {transform: scale(1.1);}
+
+    main {
+      padding: 40px;
+      min-height: 65vh;
+      animation: fade .8s ease;
+    }
+
+    @keyframes fade {0%{opacity:0}100%{opacity:1}}
+
+    .box {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      padding: 30px;
+      border-radius: 18px;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 40px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.4);
+    }
+
+    .box h2 {
+      font-size: 26px;
+      text-align:center;
+      margin-bottom: 25px;
+    }
+
+    .in, .msg {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 15px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      color: #fff;
+      outline: none;
+      transition: .3s;
+    }
+
+    .in:focus, .msg:focus {transform:scale(1.02);}
+
+    .msg {height:120px; resize:none;}
+
+    .btn {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg,#ff512f,#dd2476);
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      transition:.3s;
+    }
+
+    .btn:hover {transform:scale(1.05);}
+
+    .qa {
+      background: rgba(255,255,255,0.08);
+      padding:20px;
+      border-radius:15px;
+      margin-bottom:15px;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .qa:hover {transform:scale(1.02);}
+
+    .question {
+      font-size:18px;
+      font-weight:600;
+    }
+
+    .answer {
+      margin-top:10px;
+      font-size:15px;
+      line-height:22px;
+      display:none;
+      opacity:.8;
+      transition:.4s;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 onclick="location.href='../index.html'">Hungry Notebook</h1>
+
+  <nav>
+    <button onclick="location.href='../index.html'">Home</button>
+    <button onclick="location.href='../Sign_Up/index.html'">Sign Up</button>
+    <button onclick="location.href='../Feedback_And_QnA/index.html'">Feedback / QnA</button>
+    <button onclick="location.href='../Contact_Us/index.html'">Contact Us</button>
+  </nav>
+</header>
+
+<main>
+
+  <div class="box">
+    <h2>Share Your Feedback</h2>
+
+    <input class="in" type="text" placeholder="Your Name">
+    <input class="in" type="email" placeholder="Your Email">
+    <textarea class="msg" placeholder="Write your feedback..."></textarea>
+
+    <button class="btn">Submit</button>
+  </div>
+
+  <div class="box">
+    <h2>Questions & Answers</h2>
+
+    <div class="qa" onclick="toggle(this)">
+      <div class="question">How do I submit a recipe?</div>
+      <div class="answer">You can send your recipe using the feedback form. We will review and add it soon.</div>
+    </div>
+
+    <div class="qa" onclick="toggle(this)">
+      <div class="question">Can I edit my submitted feedback?</div>
+      <div class="answer">Currently there is no option to edit, but you can submit a new corrected feedback.</div>
+    </div>
+
+    <div class="qa" onclick="toggle(this)">
+      <div class="question">Will more recipes be added?</div>
+      <div class="answer">Yes, the list is updated regularly with new dishes and student-submitted items.</div>
+    </div>
+
+    <div class="qa" onclick="toggle(this)">
+      <div class="question">How do I contact the team?</div>
+      <div class="answer">Use the Contact Us page where you can directly send your message.</div>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+function toggle(b){
+  let ans = b.querySelector(".answer");
+  ans.style.display = ans.style.display==="block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>

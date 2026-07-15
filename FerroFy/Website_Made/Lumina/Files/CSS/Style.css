@@ -1,0 +1,298 @@
+:root {
+    --Bg_Color: #0a0a0c;
+    --Primary_Color: #6366f1;
+    --Primary_Hover: #4f46e5;
+    --Text_Main: #ffffff;
+    --Text_Muted: #9ca3af;
+    --Card_Bg: rgba(255, 255, 255, 0.03);
+    --Border_Color: rgba(255, 255, 255, 0.1);
+    --Glow_Color: rgba(99, 102, 241, 0.2);
+    --Font_Family: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Bg_Color);
+    color: var(--Text_Main);
+    font-family: var(--Font_Family);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.Background_Glow {
+    position: fixed;
+    top: -20%;
+    left: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--Glow_Color) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: -1;
+    border-radius: 50%;
+    animation: Pulse_Glow 10s infinite alternate;
+}
+
+@keyframes Pulse_Glow {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.2) translate(5%, 5%);
+    }
+}
+
+.App_Container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.Header {
+    text-align: center;
+    margin-bottom: 4rem;
+    transition: all 0.5s ease;
+}
+
+.Header.Active {
+    margin-bottom: 2rem;
+}
+
+.Logo {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.Subtitle {
+    color: var(--Text_Muted);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.Search_Wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--Card_Bg);
+    border: 1px solid var(--Border_Color);
+    border-radius: 100px;
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.Search_Wrapper:focus-within {
+    border-color: var(--Primary_Color);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.3);
+}
+
+.Search_Icon {
+    font-size: 1.5rem;
+    color: var(--Text_Muted);
+}
+
+.Search_Input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--Text_Main);
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+    font-family: inherit;
+}
+
+.Search_Input::placeholder {
+    color: #4b5563;
+}
+
+.Search_Btn {
+    background: var(--Primary_Color);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.Search_Btn:hover {
+    background: var(--Primary_Hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.Results_Section {
+    min-height: 400px;
+    position: relative;
+}
+
+.Loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+    gap: 1.5rem;
+}
+
+.Spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--Border_Color);
+    border-top-color: var(--Primary_Color);
+    border-radius: 50%;
+    animation: Spin 1s linear infinite;
+}
+
+.Generating_Text {
+    color: var(--Primary_Color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: Pulse_Text 1.5s infinite;
+}
+
+@keyframes Spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes Pulse_Text {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.Hidden {
+    display: none !important;
+}
+
+.Error_Message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #ef4444;
+    padding: 2rem;
+    font-size: 1.2rem;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.Image_Gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.Image_Card {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    background: var(--Card_Bg);
+    border: 1px solid var(--Border_Color);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Fade_In_Up 0.6s forwards;
+}
+
+.Image_Card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes Fade_In_Up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Gallery_Image {
+    width: 100%;
+    display: block;
+    height: auto;
+    transition: transform 0.6s ease;
+}
+
+.Image_Card:hover .Gallery_Image {
+    transform: scale(1.05);
+}
+
+.Image_Overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.Image_Card:hover .Image_Overlay {
+    opacity: 1;
+}
+
+.Image_Title {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 1024px) {
+    .Image_Card {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Logo {
+        font-size: 3rem;
+    }
+
+    .Search_Wrapper {
+        flex-direction: column;
+        border-radius: 1rem;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .Search_Btn {
+        width: 100%;
+    }
+
+    .Search_Input {
+        width: 100%;
+    }
+
+    .Search_Icon {
+        display: none;
+    }
+}

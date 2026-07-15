@@ -1,0 +1,76 @@
+{
+  "Records": [
+    {
+      "Land_Id":  "LND-001",
+      "Owner":    "Rajesh Kumar",
+      "Location": "Chandigarh, Punjab",
+      "Area":     1500,
+      "Price":    8500000,
+      "Type":     "REGISTER",
+      "Status":   "ACTIVE"
+    },
+    {
+      "Land_Id":  "LND-002",
+      "Owner":    "Priya Sharma",
+      "Location": "Mohali, Punjab",
+      "Area":     2200,
+      "Price":    12000000,
+      "Type":     "REGISTER",
+      "Status":   "ACTIVE"
+    },
+    {
+      "Land_Id":  "LND-003",
+      "Owner":    "Amit Verma",
+      "Location": "Patiala, Punjab",
+      "Area":     900,
+      "Price":    4500000,
+      "Type":     "REGISTER",
+      "Status":   "ACTIVE"
+    },
+    {
+      "Land_Id":  "LND-001",
+      "Owner":    "Suresh Patel",
+      "Location": "Chandigarh, Punjab",
+      "Area":     1500,
+      "Price":    9200000,
+      "Type":     "TRANSFER",
+      "Status":   "TRANSFERRED"
+    },
+    {
+      "Land_Id":  "LND-001",
+      "Owner":    "Vikrant Pathania",
+      "Location": "Chandigarh, Punjab",
+      "Area":     1500,
+      "Price":    9200000,
+      "Type":     "TRANSFER",
+      "Status":   "TRANSFERRED"
+    },
+    {
+      "Land_Id":  "1234",
+      "Owner":    "abc",
+      "Location": "Baddi , India",
+      "Area":     1000,
+      "Price":    1234,
+      "Type":     "TRANSFER",
+      "Status":   "TRANSFERRED"
+    },
+    {
+      "Land_Id":  "abcd",
+      "Owner":    "VPX",
+      "Location": "ind",
+      "Area":     100,
+      "Price":    10,
+      "Type":     "REGISTER",
+      "Status":   "ACTIVE"
+    },
+    {
+      "Land_Id":  "LND-001",
+      "Owner":    "Human ",
+      "Location": "Chandigarh, Punjab",
+      "Area":     1500,
+      "Price":    9200000,
+      "Type":     "TRANSFER",
+      "Status":   "TRANSFERRED"
+    }
+  ]
+}

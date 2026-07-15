@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    background-color: #050505;
+    background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.Dashboard_Container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.Glass_Panel {
+    background: rgba(10, 15, 20, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 243, 255, 0.15);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 243, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.Glass_Panel:hover {
+    border-color: rgba(0, 243, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 40px #00f3ff;
+}
+
+.Date_Display {
+    font-size: 1.1rem;
+    color: #b100ff;
+    text-shadow: 0 0 8px #b100ff;
+    font-weight: 600;
+}
+
+.Main_Content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #00f3ff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #00f3ff;
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+.Menu_List {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Menu_Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Menu_Item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.15);
+    border-color: rgba(0, 243, 255, 0.2);
+}
+
+.Item_Info h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.Item_Info p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.Suggestion_Badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: Pulse 2s infinite;
+}
+
+.Badge_Eat {
+    background: rgba(0, 255, 102, 0.1);
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+}
+
+.Badge_Skip {
+    background: rgba(255, 0, 85, 0.1);
+    color: #ff0055;
+    border: 1px solid #ff0055;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
+}
+
+@keyframes Pulse {
+    0% { box-shadow: 0 0 0 0 rgba(inherit, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(inherit, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(inherit, 0); }
+}
+
+.Rating {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.Star_Icon {
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+    stroke: #555;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.Star_Icon:hover, .Star_Icon.Active {
+    fill: #00f3ff;
+    stroke: #00f3ff;
+    filter: drop-shadow(0 0 5px #00f3ff);
+}
+
+.Stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Stat_Box {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.Stat_Box h3 {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Progress_Bar_Container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.Progress_Bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00f3ff, #b100ff);
+    border-radius: 4px;
+    box-shadow: 0 0 10px #b100ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.Progress_Bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: translateX(-100%);
+    animation: Shimmer 2s infinite;
+}
+
+@keyframes Shimmer {
+    100% { transform: translateX(100%); }
+}
+
+.Neon_Text_Green {
+    color: #00ff66;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ff66;
+}
+
+.Glowing_Item {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00f3ff;
+    text-shadow: 0 0 8px #00f3ff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.Fee_Details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Fee_Details p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.Status_Paid {
+    color: #00ff66;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ff66;
+}
+
+.Status_Date {
+    color: #00f3ff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    color: #00f3ff;
+    padding: 15px;
+    border-radius: 8px;
+    resize: vertical;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #00f3ff;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+textarea::placeholder {
+    color: rgba(0, 243, 255, 0.3);
+}
+
+.Neon_Btn {
+    background: transparent;
+    color: #00f3ff;
+    border: 1px solid #00f3ff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.Neon_Btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.4), transparent);
+    transition: all 0.5s ease;
+}
+
+.Neon_Btn:hover::before {
+    left: 100%;
+}
+
+.Neon_Btn:hover {
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4), inset 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.Pay_Btn {
+    border-color: #b100ff;
+    color: #b100ff;
+}
+
+.Pay_Btn::before {
+    background: linear-gradient(90deg, transparent, rgba(177, 0, 255, 0.4), transparent);
+}
+
+.Pay_Btn:hover {
+    background: rgba(177, 0, 255, 0.1);
+    box-shadow: 0 0 15px rgba(177, 0, 255, 0.4), inset 0 0 10px rgba(177, 0, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+    .Main_Content {
+        grid-template-columns: 1fr;
+    }
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .Menu_Item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .Item_Actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

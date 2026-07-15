@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "esModuleInterop": true,
+    "target": "esnext",
+    "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
+    "strict": false,
+    "sourceMap": true,
+    "rootDir": "./src",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "lib": ["es2015"],
+  "include": [
+    "src/@types",
+    "src/app.ts",
+    "src/tools/migrateDB.ts"
+  ],
+  "exclude": [
+    "tests",
+    "tests-old",
+    "faucet-client",
+    "faucet-wasm",
+    "node_modules"
+  ]
+}

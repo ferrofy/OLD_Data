@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Hostel Mess Dashboard</title>
+<link rel="stylesheet" href="Files/CSS/Style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="Dashboard_Container">
+  <header class="Glass_Panel">
+    <h1 class="Neon_Text_Cyan">Hostel Mess System</h1>
+    <div class="Date_Display" id="CurrentDate"></div>
+  </header>
+  
+  <div class="Main_Content">
+    <section class="Menu_Section Glass_Panel">
+      <h2 class="Neon_Border_Bottom">Today's Menu & Smart Suggestions</h2>
+      <div id="MenuContainer" class="Menu_List"></div>
+    </section>
+
+    <div class="Side_Panel">
+      <section class="Live_Dashboard Glass_Panel">
+        <h2 class="Neon_Border_Bottom">Live Dashboard</h2>
+        <div class="Stats">
+          <div class="Stat_Box">
+            <h3>Current Crowd</h3>
+            <div class="Progress_Bar_Container">
+              <div class="Progress_Bar" id="CrowdLevelBar" style="width: 45%;"></div>
+            </div>
+            <p id="CrowdLevelText" class="Neon_Text_Green">Moderate (45%)</p>
+          </div>
+          <div class="Stat_Box">
+            <h3>Top Rated Item</h3>
+            <div class="Glowing_Item" id="TopItem">Paneer Tikka</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="Fee_Section Glass_Panel">
+        <h2 class="Neon_Border_Bottom">Fee Status</h2>
+        <div class="Fee_Details">
+          <p>Current Month: <span class="Status_Paid">Paid</span></p>
+          <p>Next Due: <span class="Status_Date">June 1, 2026</span></p>
+          <button class="Neon_Btn Pay_Btn">View Receipt</button>
+        </div>
+      </section>
+
+      <section class="Suggestions_Section Glass_Panel">
+        <h2 class="Neon_Border_Bottom">Student Suggestions</h2>
+        <form id="SuggestionForm">
+          <textarea id="SuggestionText" rows="3" required placeholder="Enter Transmission..."></textarea>
+          <button type="submit" class="Neon_Btn Submit_Btn">Submit Suggestion</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
+<script src="Files/JS/Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Roadmap Tracker</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="Files/CSS/Main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="Container">
+
+        <div class="Header">
+            <div class="Badge">
+                <span class="Badge_Dot"></span>
+                C
+            </div>
+            <h1 class="Title">C CheckList</h1>
+        </div>
+
+        <div class="Timer_Panel" id="Timer_Panel">
+            <div class="Timer_Panel_Top">
+                <div class="Timer_Heading">
+                    <span class="Timer_Icon">⏳</span>
+                    <div>
+                        <div class="Timer_Title">Exam Countdown</div>
+                        <div class="Timer_Deadline" id="Tmr_Deadline">Jun 1, 2026 · 8:30 AM</div>
+                    </div>
+                </div>
+                <div class="Timer_Digits">
+                    <div class="Timer_Unit">
+                        <span class="Timer_Value" id="Tmr_Days">00</span>
+                        <span class="Timer_Unit_Label">Days</span>
+                    </div>
+                    <span class="Timer_Sep">:</span>
+                    <div class="Timer_Unit">
+                        <span class="Timer_Value" id="Tmr_Hrs">00</span>
+                        <span class="Timer_Unit_Label">Hrs</span>
+                    </div>
+                    <span class="Timer_Sep">:</span>
+                    <div class="Timer_Unit">
+                        <span class="Timer_Value" id="Tmr_Mins">00</span>
+                        <span class="Timer_Unit_Label">Min</span>
+                    </div>
+                    <span class="Timer_Sep">:</span>
+                    <div class="Timer_Unit">
+                        <span class="Timer_Value" id="Tmr_Secs">00</span>
+                        <span class="Timer_Unit_Label">Sec</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Timer_Stats_Row">
+                <div class="Timer_Stat_Box">
+                    <div class="Timer_Stat_Icon">📚</div>
+                    <div class="Timer_Stat_Value" id="Tmr_Topics_Left">—</div>
+                    <div class="Timer_Stat_Desc">Topics Left</div>
+                </div>
+                <div class="Timer_Stat_Box">
+                    <div class="Timer_Stat_Icon">⏱</div>
+                    <div class="Timer_Stat_Value" id="Tmr_Avg">—</div>
+                    <div class="Timer_Stat_Desc">Avg / Topic Left</div>
+                </div>
+                <div class="Timer_Stat_Box">
+                    <div class="Timer_Stat_Icon">📈</div>
+                    <div class="Timer_Stat_Value" id="Tmr_Done_Pct">0%</div>
+                    <div class="Timer_Stat_Desc">Completed</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="Main_Dashboard">
+
+            <div class="Overview_Card">
+                <div class="Card_Label">Overall Progress</div>
+
+                <div class="Main_Chart_Wrap">
+                    <canvas id="Main_Chart"></canvas>
+                    <div class="Chart_Center_Text">
+                        <span class="Chart_Percent" id="Main_Pct">0%</span>
+                        <span class="Chart_Label">Complete</span>
+                    </div>
+                </div>
+
+                <div class="Main_Progress_Section">
+                    <div class="Progress_Label_Row">
+                        <span class="Progress_Label_Text">Total Progress</span>
+                        <span class="Progress_Count" id="Prog_Count">0 / 0</span>
+                    </div>
+                    <div class="Progress_Track">
+                        <div class="Progress_Fill" id="Main_Bar" style="width:0%;"></div>
+                    </div>
+                </div>
+
+                <div class="Stats_Grid">
+                    <div class="Stat_Box">
+                        <div class="Stat_Value Done" id="Done_Count">0</div>
+                        <div class="Stat_Desc">Completed</div>
+                    </div>
+                    <div class="Stat_Box">
+                        <div class="Stat_Value Left" id="Left_Count">0</div>
+                        <div class="Stat_Desc">Remaining</div>
+                    </div>
+                </div>
+
+                <div class="Overview_Divider"></div>
+
+                <div class="Legend_List" id="Legend_List"></div>
+            </div>
+
+            <div class="Topics_Column" id="Topics_Col"></div>
+
+        </div>
+    </div>
+
+    <script src="Files/JS/Data.js"></script>
+    <script src="Files/JS/Storage.js"></script>
+    <script src="Files/JS/Charts.js"></script>
+    <script src="Files/JS/Timer.js"></script>
+    <script src="Files/JS/App.js"></script>
+
+</body>
+
+</html>

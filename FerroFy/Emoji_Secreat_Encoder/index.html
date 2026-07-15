@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Secret Encoder</title>
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>🔐 Emoji Hidden Message Tool</h2>
+        <h3>Hide Message</h3>
+        <input id="emojiInput" placeholder="Visible emojis (ex: 😎🔥)" />
+        <textarea id="secretInput" placeholder="Secret message"></textarea>
+        <button onclick="encode()">Encrypt</button>
+        <div class="result" id="encoded"></div>
+        <button onclick="copyEncoded()">📋 Copy Encrypted Emojis</button>
+        <hr>
+        <h3>Reveal Message</h3>
+        <textarea id="decodeInput" placeholder="Paste encoded emojis"></textarea>
+        <button onclick="decode()">Decrypt</button>
+        <div class="result" id="decoded"></div>
+    </div>
+
+    <div class="footer">
+        Made by <b>Vansh Saxena</b> • Just For Fun 😄 <br>
+        Forked And Edited By <b>FerroFy</b> • Just To Learn 😄
+    </div>
+    <script src="Script.js"></script>
+</body>
+
+</html>

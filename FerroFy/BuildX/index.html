@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FerroFy Sensor Console</title>
+    <meta name="description" content="FerroFy Sensor Console — Live sensor data upload and blockchain fetch on Sepolia.">
+    <link rel="stylesheet" href="Files/CSS/CSS.css">
+    <link rel="shortcut icon" href="Files/Images/Favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <main class="shell">
+        <header class="topbar">
+            <div class="topbar-left">
+                <img src="Files/Images/Favicon.png" alt="FerroFy" class="topbar-logo">
+                <h1>FerroFy Sensor Console</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="network-pill" id="Network_Status">Sepolia</div>
+                <button class="button-blue" id="Connect_Button" type="button">Connect MetaMask</button>
+            </div>
+        </header>
+
+        <div class="grid">
+
+            <section class="panel span-12" id="Live_Sensor_Panel">
+                <div class="panel-header">
+                    <h2>&#x1F4E1; Live Sensor Data</h2>
+                    <div class="sensor-serial-row">
+                        <span class="sensor-status-dot" id="Sensor_Dot"></span>
+                        <span class="sensor-status-label" id="Sensor_Status_Label">Not Connected</span>
+                        <button class="button-secondary" id="Serial_Button" type="button">Connect Serial</button>
+                    </div>
+                </div>
+                <div class="live-sensor-grid">
+                    <div class="live-card live-card--temp">
+                        <div class="live-card-icon">&#x1F321;&#xFE0F;</div>
+                        <div class="live-card-label">Temperature</div>
+                        <div class="live-card-value" id="Live_Temp">--</div>
+                        <div class="live-card-unit">°C</div>
+                    </div>
+                    <div class="live-card live-card--hum">
+                        <div class="live-card-icon">&#x1F4A7;</div>
+                        <div class="live-card-label">Humidity</div>
+                        <div class="live-card-value" id="Live_Hum">--</div>
+                        <div class="live-card-unit">%</div>
+                    </div>
+                    <div class="live-card live-card--rain">
+                        <div class="live-card-icon">&#x1F327;&#xFE0F;</div>
+                        <div class="live-card-label">Rain</div>
+                        <div class="live-card-value" id="Live_Rain_Status">--</div>
+                        <div class="live-card-unit" id="Live_Rain_Pct"></div>
+                    </div>
+                    <div class="live-card live-card--mq2">
+                        <div class="live-card-icon">&#x1F32B;&#xFE0F;</div>
+                        <div class="live-card-label">Smoke (MQ2)</div>
+                        <div class="live-card-value" id="Live_MQ2">--</div>
+                        <div class="live-card-unit">raw</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel span-8">
+                <div class="panel-header">
+                    <h2>&#x1F4C8; Live Chart</h2>
+                    <select id="Chart_Select" class="chart-select">
+                        <option value="temp">Temperature</option>
+                        <option value="hum">Humidity</option>
+                        <option value="mq2">MQ2</option>
+                        <option value="rain">Rain</option>
+                    </select>
+                </div>
+                <div class="chart-wrap">
+                    <canvas id="Sensor_Chart"></canvas>
+                </div>
+            </section>
+
+            <section class="panel span-4">
+                <div class="panel-header">
+                    <h2>&#x1F5A5;&#xFE0F; Serial Log</h2>
+                </div>
+                <div class="serial-log" id="Serial_Log">No serial data.</div>
+            </section>
+
+            <section class="panel span-4">
+                <div class="panel-header">
+                    <h2>&#x1F4B3; Wallet</h2>
+                </div>
+                <div class="field">
+                    <label for="INRf_Token_Address">INRf Token Address</label>
+                    <input id="INRf_Token_Address" autocomplete="off" placeholder="0x..." spellcheck="false">
+                </div>
+                <div class="metric-list">
+                    <div class="metric">
+                        <span>Account</span>
+                        <strong class="address" id="Wallet_Address">Not Connected</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Balance</span>
+                        <strong id="Payment_Balance">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>INRf Token</span>
+                        <strong class="address" id="Payment_Token_Address">-</strong>
+                    </div>
+                </div>
+                <div class="status" id="Wallet_Status">Disconnected</div>
+            </section>
+
+            <section class="panel span-8">
+                <div class="panel-header">
+                    <h2>&#x1F4DD; Contract</h2>
+                    <button class="button-secondary" id="Refresh_Button" type="button">Refresh</button>
+                </div>
+                <div class="field">
+                    <label for="Contract_Address">Data Contract Address</label>
+                    <input id="Contract_Address" autocomplete="off" placeholder="0x..." spellcheck="false">
+                </div>
+                <div class="button-row">
+                    <button class="button-secondary" id="Load_Contract_Button" type="button">Load Contract</button>
+                    <button class="button-secondary" id="Latest_Id_Button" type="button">Use Latest ID</button>
+                </div>
+                <div class="metric-list">
+                    <div class="metric">
+                        <span>Upload Fee</span>
+                        <strong id="Upload_Fee">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Fetch Fee</span>
+                        <strong id="Fetch_Fee">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Total Data</span>
+                        <strong id="Total_Data">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Reward Tokens</span>
+                        <strong class="address" id="Reward_Tokens">Deploy contract first</strong>
+                    </div>
+                </div>
+                <div class="status" id="Contract_Status">No contract loaded.</div>
+            </section>
+
+            <section class="panel span-6">
+                <div class="panel-header">
+                    <h2>&#x2B06;&#xFE0F; Upload Data</h2>
+                    <span class="badge-readonly">Auto From Sensor</span>
+                </div>
+                <div class="upload-preview-grid">
+                    <div class="upload-preview-cell">
+                        <span>Temperature</span>
+                        <strong id="Upload_Preview_Temp">0 °C</strong>
+                        <input id="Temperature_Input" type="hidden" value="0">
+                    </div>
+                    <div class="upload-preview-cell">
+                        <span>Humidity</span>
+                        <strong id="Upload_Preview_Hum">0 %</strong>
+                        <input id="Humidity_Input" type="hidden" value="0">
+                    </div>
+                    <div class="upload-preview-cell">
+                        <span>MQ2 (Smoke)</span>
+                        <strong id="Upload_Preview_MQ2">0</strong>
+                        <input id="MQ2_Input" type="hidden" value="0">
+                    </div>
+                    <div class="upload-preview-cell">
+                        <span>Rain</span>
+                        <strong id="Upload_Preview_Rain">0</strong>
+                        <input id="Rain_Input" type="hidden" value="0">
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="button-green" id="Upload_Button" type="button">&#x26A1; Approve + Upload</button>
+                </div>
+                <div class="status" id="Upload_Status">Waiting for sensor data.</div>
+            </section>
+
+            <section class="panel span-6">
+                <div class="panel-header">
+                    <h2>&#x2B07;&#xFE0F; Fetch Data</h2>
+                </div>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="Fetch_Id_Input">Data ID</label>
+                        <input id="Fetch_Id_Input" type="number" min="0" step="1" value="0">
+                    </div>
+                    <div class="field">
+                        <label for="Fetch_Type_Select">Data Type</label>
+                        <select id="Fetch_Type_Select">
+                            <option value="all">All</option>
+                            <option value="temperature">Temperature</option>
+                            <option value="humidity">Humidity</option>
+                            <option value="mq2">MQ2</option>
+                            <option value="rain">Rain</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="button-amber" id="Fetch_Button" type="button">&#x1F50D; Approve + Fetch</button>
+                </div>
+                <div class="status" id="Fetch_Status">No fetch yet.</div>
+
+                <div class="divider"></div>
+
+                <div class="panel-header" style="margin-top:14px;">
+                    <h2>&#x1F4CA; Latest Result</h2>
+                </div>
+                <div class="result-grid">
+                    <div class="result-cell">
+                        <span>Temp</span>
+                        <strong id="Result_Temperature">-</strong>
+                    </div>
+                    <div class="result-cell">
+                        <span>Humidity</span>
+                        <strong id="Result_Humidity">-</strong>
+                    </div>
+                    <div class="result-cell">
+                        <span>MQ2</span>
+                        <strong id="Result_MQ2">-</strong>
+                    </div>
+                    <div class="result-cell">
+                        <span>Rain</span>
+                        <strong id="Result_Rain">-</strong>
+                    </div>
+                </div>
+                <div class="metric-list" style="margin-top:10px;">
+                    <div class="metric">
+                        <span>Data ID</span>
+                        <strong id="Result_Data_Id">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Uploader</span>
+                        <strong class="address" id="Result_Uploader">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Timestamp</span>
+                        <strong id="Result_Timestamp">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Transaction</span>
+                        <strong class="address" id="Result_Tx">-</strong>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+    <script src="Files/JS/MetaMask.js"></script>
+    <script src="Files/JS/Arduino.js"></script>
+</body>
+
+</html>

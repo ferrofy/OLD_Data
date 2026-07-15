@@ -1,0 +1,261 @@
+@keyframes Fade_In_Up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes Shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes Pulse_Glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes Float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+#Main_Heading {
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    font-size: 2.6rem;
+    font-family: var(--Font_Headline);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--Text_On_Surface);
+    animation: Fade_In_Up 0.8s var(--Ease_Out_Expo) both;
+    position: relative;
+}
+
+#Main_Heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--Primary), var(--Secondary));
+    border-radius: var(--Radius_Full);
+    margin: 16px auto 0;
+    box-shadow: 0 0 12px var(--Primary_Glow);
+}
+
+#All_Cards {
+    display: flex;
+    gap: 28px;
+    align-items: stretch;
+    justify-content: center;
+    margin: 30px auto 80px auto;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.Card {
+    background: var(--Card_BG_Color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--Card_Border_Color);
+    border-radius: var(--Radius_LG);
+    padding: 30px 28px;
+    text-align: center;
+    width: 320px;
+    transition: all 0.45s var(--Ease_Bounce);
+    box-shadow: var(--Shadow_SM);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    animation: Fade_In_Up 0.8s var(--Ease_Out_Expo) both;
+}
+
+.Card:nth-child(1) { animation-delay: 0.1s; }
+.Card:nth-child(2) { animation-delay: 0.2s; }
+.Card:nth-child(3) { animation-delay: 0.3s; }
+
+#All_Cards a {
+    text-decoration: none;
+    color: var(--Text_On_Surface);
+}
+
+#All_Cards a:nth-child(1) .Card { animation-delay: 0.1s; }
+#All_Cards a:nth-child(2) .Card { animation-delay: 0.25s; }
+#All_Cards a:nth-child(3) .Card { animation-delay: 0.4s; }
+
+.Card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(199, 147, 248, 0.06) 50%,
+        transparent 70%
+    );
+    transition: left 0.7s var(--Ease_Out_Expo);
+}
+
+.Card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--Radius_LG);
+    padding: 1px;
+    background: linear-gradient(135deg, transparent 40%, var(--Primary_Dim) 50%, transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s var(--Ease_Smooth);
+    pointer-events: none;
+}
+
+.Card:hover {
+    transform: translateY(-12px) scale(1.02);
+    background: var(--Card_Hover_Color);
+    box-shadow: var(--Shadow_LG), var(--Shadow_Glow_Accent);
+    border-color: rgba(122, 162, 247, 0.25);
+}
+
+.Card:hover::before {
+    left: 100%;
+}
+
+.Card:hover::after {
+    opacity: 1;
+}
+
+#CSE_Card:hover {
+    border-color: rgba(122, 162, 247, 0.3);
+    box-shadow: var(--Shadow_LG), 0 0 35px rgba(122, 162, 247, 0.12);
+}
+
+#Physics_Card:hover {
+    border-color: rgba(199, 147, 248, 0.3);
+    box-shadow: var(--Shadow_LG), 0 0 35px rgba(199, 147, 248, 0.12);
+}
+
+#Math_Card:hover {
+    border-color: rgba(58, 223, 250, 0.3);
+    box-shadow: var(--Shadow_LG), 0 0 35px rgba(58, 223, 250, 0.12);
+}
+
+a {
+    text-decoration: none;
+    color: var(--Text_On_Surface);
+}
+
+.Card_Heading {
+    font-size: 1.9rem;
+    font-weight: 800;
+    font-family: var(--Font_Headline);
+    color: var(--Neon_Accent);
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-shadow: 0 0 15px var(--Neon_Accent_Glow);
+    transition: all 0.3s var(--Ease_Smooth);
+}
+
+#CSE_Card .Card_Heading {
+    color: var(--Neon_Accent);
+    text-shadow: 0 0 15px var(--Neon_Accent_Glow);
+}
+
+#Physics_Card .Card_Heading {
+    color: var(--Primary);
+    text-shadow: 0 0 15px var(--Primary_Glow);
+}
+
+#Math_Card .Card_Heading {
+    color: var(--Secondary);
+    text-shadow: 0 0 15px var(--Secondary_Glow);
+}
+
+.Card_Heading i {
+    font-size: 1.6rem;
+    transition: transform 0.4s var(--Ease_Bounce);
+}
+
+.Card:hover .Card_Heading i {
+    transform: scale(1.15);
+    animation: Float 2s ease-in-out infinite;
+}
+
+.Card_Body {
+    border-top: 1px solid var(--Outline_Subtle);
+    border-bottom: 1px solid var(--Outline_Subtle);
+    margin: 18px -28px;
+    padding: 20px 28px;
+    color: var(--Text_Muted);
+    font-family: var(--Font_Body);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.7;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s var(--Ease_Smooth);
+}
+
+.Card:hover .Card_Body {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.Card_Ending {
+    color: var(--Accent_Green);
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: var(--Font_Headline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all 0.3s var(--Ease_Smooth);
+}
+
+.Card:hover .Card_Ending {
+    text-shadow: 0 0 12px var(--Accent_Green_Glow);
+}
+
+.Card_Ending i {
+    transition: transform 0.4s var(--Ease_Bounce);
+}
+
+.Card:hover .Card_Ending i {
+    transform: translateX(8px);
+}
+
+@media (max-width: 768px) {
+    #Main_Heading {
+        font-size: 1.8rem;
+        padding: 30px 16px 20px 16px;
+    }
+
+    #All_Cards {
+        gap: 20px;
+        margin: 20px auto 50px auto;
+    }
+
+    .Card {
+        width: 100%;
+        max-width: 360px;
+    }
+}

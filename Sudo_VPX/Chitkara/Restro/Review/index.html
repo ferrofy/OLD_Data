@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TastyPoint - Item Reviews</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7e6;
+      color: #333;
+    }
+
+    header {
+      background: #ff914d;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav {
+      background: #ff7a33;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff7a33;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .review-box {
+      background: #fff0d6;
+      padding: 14px;
+      border-radius: 8px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .review-box img {
+      width: 120px;
+      height: 90px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .review-content h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #ff7a33;
+    }
+
+    .stars {
+      font-size: 16px;
+      color: gold;
+      margin: 6px 0;
+    }
+
+    .review-content p {
+      margin: 4px 0 0 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    footer {
+      background: #ff7a33;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 420px) {
+      .review-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .review-box img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>TastyPoint</header>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../Welcome/index.html">Welcome</a>
+    <a href="../Story/index.html">Our Story</a>
+    <a href="../Review/index.html">Reviews</a>
+    <a href="../Login/index.html">Login</a>
+    <a href="../Contact_Us/index.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Customer Reviews</h2>
+
+    <div class="reviews-grid">
+
+      <div class="review-box">
+        <img src="../Images/Pizza.png" alt="Cheese Pizza">
+        <div class="review-content">
+          <h3>Cheese Pizza</h3>
+          <div class="stars">★★★★★</div>
+          <p>Melty cheese and perfect crust — a crowd favorite.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/Burger.jpg" alt="Veg Burger">
+        <div class="review-content">
+          <h3>Veg Burger</h3>
+          <div class="stars">★★★★☆</div>
+          <p>Juicy and crisp, with fresh veggies and tasty sauce.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/WSpasta.jpeg" alt="White Sauce Pasta">
+        <div class="review-content">
+          <h3>White Sauce Pasta</h3>
+          <div class="stars">★★★★☆</div>
+          <p>Creamy, rich and perfectly seasoned with herbs.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/FrenchF.jpg" alt="French Fries">
+        <div class="review-content">
+          <h3>French Fries</h3>
+          <div class="stars">★★★★★</div>
+          <p>Crispy on the outside, fluffy inside — addictive.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/Momos.jpeg" alt="Veg Momos">
+        <div class="review-content">
+          <h3>Veg Momos</h3>
+          <div class="stars">★★★★☆</div>
+          <p>Soft dumplings served with spicy and tangy chutney.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/Sand.jpeg" alt="Grilled Sandwich">
+        <div class="review-content">
+          <h3>Grilled Sandwich</h3>
+          <div class="stars">★★★★☆</div>
+          <p>Toasty bread with melted cheese and veggies.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/PaneerTika.jpeg" alt="Paneer Tikka">
+        <div class="review-content">
+          <h3>Paneer Tikka</h3>
+          <div class="stars">★★★★★</div>
+          <p>Spiced paneer cubes grilled to perfection.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/Shake.png" alt="Chocolate Shake">
+        <div class="review-content">
+          <h3>Chocolate Milkshake</h3>
+          <div class="stars">★★★★★</div>
+          <p>Thick, creamy and full of chocolate flavor.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/Salad.png" alt="Caesar Salad">
+        <div class="review-content">
+          <h3>Caesar Salad</h3>
+          <div class="stars">★★★★☆</div>
+          <p>Fresh greens, crunchy croutons and tangy dressing.</p>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <img src="../Images/Garlic.jpeg" alt="Garlic Bread">
+        <div class="review-content">
+          <h3>Garlic Bread</h3>
+          <div class="stars">★★★★★</div>
+          <p>Buttery, garlicky and perfectly crisped.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

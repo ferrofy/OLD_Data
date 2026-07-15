@@ -1,0 +1,11 @@
+{
+    "Network": "sepolia",
+    "ChainId": 11155111,
+    "Deployer": "0x91b2Aef20c29d87d8dcc48191b30FbC1562aAaF0",
+    "INRfToken": "0x594780D36EDb851B54ADBFefeC30D5Bb6BF0008E",
+    "TemperatureToken": "0x6b383C9AE7DE29023dE6c836317058993E9A3B30",
+    "HumidityToken": "0xe6b5076C555A1067c6bC5152E475C9dA74A54b1B",
+    "Mq2Token": "0x793b9c17eA4527412EA6d66d0bd02A78dc41e13f",
+    "RainToken": "0x7c48c5a7284aE2EeA4d1e7d89c79005E6ccf845d",
+    "SensorStorage": "0xCc19060642C8fb3A090ff7e69740d93D8773B190"
+}

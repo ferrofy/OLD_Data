@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyPoint - Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #faf7f0;
+        }
+
+        header {
+            background: #ff914d;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #ff914d;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #b71f1f;
+        }
+
+        .switch {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .switch a {
+            color: #ff914d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .switch a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>TastyPoint</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../Welcome/index.html">Welcome</a>
+            <a href="../Story/index.html">Our Story</a>
+            <a href="../Review/index.html">Reviews</a>
+            <a href="../Login/index.html">Login</a>
+            <a href="../Contact_Us/index.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <h2>Login</h2>
+
+        <form>
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password">
+
+            <button class="btn">Login</button>
+        </form>
+
+        <div class="switch">
+            Don't have an account? <a href="#signup">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="form-container" id="signup">
+        <h2>Sign Up</h2>
+
+        <form>
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Create Password</label>
+            <input type="password" placeholder="Create a password">
+
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm your password">
+
+            <button class="btn">Sign Up</button>
+        </form>
+
+        <div class="switch">
+            Already have an account? <a href="#top">Login</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

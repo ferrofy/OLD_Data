@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Maker | Payload Generator</title>
+    <link rel="icon" type="image/png" href="../Files/Assets/favicon.png">
+    <link rel="stylesheet" href="../Files/CSS/style.css">
+    <link rel="stylesheet" href="../Files/CSS/dict_style.css">
+</head>
+<body>
+    <div class="Main_Container">
+        <div class="Header_Section">
+            <h1 class="Main_Title">Dictionary Maker</h1>
+            <p class="Sub_Title">Generate Custom Password Payloads</p>
+        </div>
+
+        <div class="Input_Section">
+            <div class="Option_Group">
+                <p class="Metric_Label">Target User Name</p>
+                <input type="text" id="Dict_Name" class="Password_Input_Field" placeholder="e.g. John Doe" autocomplete="off">
+            </div>
+            
+
+            <div class="Option_Group">
+                <p class="Metric_Label">Target Mobile No</p>
+                <input type="text" id="Dict_Mobile" class="Password_Input_Field" placeholder="e.g. 9876543210" autocomplete="off">
+            </div>
+
+            <div class="Option_Group">
+                <p class="Metric_Label">Target DOB</p>
+                <input type="date" id="Dict_DOB" class="Password_Input_Field">
+            </div>
+
+            <div class="Option_Group">
+                <p class="Metric_Label">Extra Keywords (One Per Line)</p>
+                <textarea id="Dict_Keywords" class="Password_Input_Field" placeholder="e.g. petname&#10;company&#10;city" rows="4"></textarea>
+            </div>
+
+            <div class="Button_Group">
+                <button id="Generate_Button" class="Action_Button Start_Action">Generate Dictionary</button>
+            </div>
+        </div>
+
+        <div class="Display_Section">
+            <div class="Status_Display">
+                <h2 id="Dict_Status_Text">Status : Awaiting Configuration</h2>
+            </div>
+
+            <div class="Metrics_Grid">
+                <div class="Metric_Card">
+                    <p class="Metric_Label">Total Combinations</p>
+                    <p id="Total_Combos" class="Metric_Value">0</p>
+                </div>
+                <div class="Metric_Card">
+                    <p class="Metric_Label">Generations / Sec</p>
+                    <p id="Speed_Display" class="Metric_Value">0</p>
+                </div>
+            </div>
+            
+            <div class="Button_Group" id="Download_Group" style="display: none; margin-top: 20px;">
+                <button id="Download_Button" class="Action_Button Start_Action">Download .txt File</button>
+            </div>
+            
+            <div class="Footer_Links">
+                <a href="../index.html" class="Footer_Link">Return To Bruteforce Engine</a>
+            </div>
+        </div>
+    </div>
+    <script src="../Files/JS/dict_script.js"></script>
+</body>
+</html>

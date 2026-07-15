@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Image Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Files/CSS/Style.css">
+</head>
+
+<body>
+    <div class="Background_Glow"></div>
+
+    <main class="App_Container">
+        <header class="Header">
+            <h1 class="Logo">Image Generator</h1>
+            <p class="Subtitle">Create The World Through Stunning Visuals.</p>
+
+            <div class="Search_Wrapper">
+                <i class="bx bx-search Search_Icon"></i>
+                <input type="text" id="Search_Input" class="Search_Input"
+                    placeholder="Describe An Image To Generate (e.g. Space, Cyberpunk)..." autocomplete="off">
+                <button id="Search_Btn" class="Search_Btn">Generate</button>
+            </div>
+        </header>
+
+        <section class="Results_Section">
+            <div id="Loader" class="Loader Hidden">
+                <div class="Spinner"></div>
+                <div class="Generating_Text" id="Generating_Text">Initializing AI Engine...</div>
+            </div>
+
+            <div id="Error_Message" class="Error_Message Hidden">
+                <i class="bx bx-error-circle"></i>
+                <span>No Results Found. Try A Different Keyword.</span>
+            </div>
+
+            <div id="Image_Gallery" class="Image_Gallery">
+            </div>
+        </section>
+    </main>
+
+    <script src="./Files/JS/App.js"></script>
+</body>
+
+</html>

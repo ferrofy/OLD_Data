@@ -1,0 +1,291 @@
+@keyframes Terminal_Blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes Scan_Line {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes Fade_In_Up_404 {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes Glitch_Flicker {
+    0%, 97%, 100% { opacity: 1; }
+    98% { opacity: 0.7; }
+    99% { opacity: 0.9; }
+}
+
+#Full_Error_Box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    font-family: var(--Font_Body);
+    animation: Fade_In_Up_404 0.6s var(--Ease_Out_Expo) both;
+}
+
+#Not_Found_Box_Header {
+    border-top-left-radius: var(--Radius_MD);
+    border-top-right-radius: var(--Radius_MD);
+    font-family: var(--Font_Mono);
+    background: var(--Surface_High);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 40px;
+    width: 92%;
+    max-width: 1000px;
+    color: var(--Text_Muted);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--Outline);
+    border-bottom: none;
+}
+
+#Circles {
+    display: flex;
+    gap: 7px;
+    padding: 0 0 0 14px;
+    flex-shrink: 0;
+}
+
+#Circle_Red {
+    height: 11px;
+    width: 11px;
+    background: linear-gradient(135deg, #ff5f57, #d73357);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(215, 51, 87, 0.4);
+    transition: all 0.3s ease;
+}
+
+#Circle_Red:hover {
+    box-shadow: 0 0 12px rgba(215, 51, 87, 0.7);
+    transform: scale(1.2);
+}
+
+#Circle_Cyan {
+    height: 11px;
+    width: 11px;
+    background: linear-gradient(135deg, #febc2e, #ffa600);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(254, 188, 46, 0.4);
+    transition: all 0.3s ease;
+}
+
+#Circle_Cyan:hover {
+    box-shadow: 0 0 12px rgba(254, 188, 46, 0.7);
+    transform: scale(1.2);
+}
+
+#Circle_Green {
+    height: 11px;
+    width: 11px;
+    background: linear-gradient(135deg, #28c840, #1aac32);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(40, 200, 64, 0.4);
+    transition: all 0.3s ease;
+}
+
+#Circle_Green:hover {
+    box-shadow: 0 0 12px rgba(40, 200, 64, 0.7);
+    transform: scale(1.2);
+}
+
+#Error_Text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--Font_Mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--Text_Muted);
+    opacity: 0.7;
+    animation: Glitch_Flicker 4s infinite;
+}
+
+#Not_Found_Box {
+    border-bottom-left-radius: var(--Radius_MD);
+    border-bottom-right-radius: var(--Radius_MD);
+    background: var(--Surface_Low);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    min-height: 70vh;
+    width: 92%;
+    max-width: 1000px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 30px 30px;
+    color: var(--Text_On_Surface);
+    font-size: medium;
+    font-family: var(--Font_Mono);
+    border: 1px solid var(--Outline);
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+}
+
+#Not_Found_Box::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--Primary), transparent);
+    opacity: 0.15;
+    animation: Scan_Line 6s linear infinite;
+    pointer-events: none;
+}
+
+.Cyan_Text {
+    color: var(--Secondary);
+    font-size: medium;
+    font-family: var(--Font_Mono);
+    text-shadow: 0 0 8px var(--Secondary_Glow);
+}
+
+#Not_Found_Box_Heading {
+    display: flex;
+    align-items: center;
+    padding: 20px 0 0 0;
+    gap: 15px;
+    font-family: var(--Font_Headline);
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+    text-shadow: 0 0 15px var(--Primary_Glow);
+    animation: Fade_In_Up_404 0.6s var(--Ease_Out_Expo) 0.2s both;
+}
+
+.fa-circle-exclamation {
+    font-size: 18px;
+    color: var(--Error);
+    text-shadow: 0 0 10px rgba(248, 108, 129, 0.5);
+    filter: drop-shadow(0 0 6px rgba(248, 108, 129, 0.3));
+}
+
+#Connection_Message {
+    border-left: 3px solid var(--Primary);
+    font-size: 22px;
+    padding: 0 0 0 50px;
+    margin: 14px 0 0 0;
+    color: var(--Primary);
+    display: flex;
+    align-items: center;
+    font-family: var(--Font_Headline);
+    font-weight: 400;
+    text-shadow: 0 0 10px var(--Primary_Glow);
+    animation: Fade_In_Up_404 0.6s var(--Ease_Out_Expo) 0.3s both;
+}
+
+.Hacker_Green_Color {
+    color: var(--Hacker_Green);
+    font-family: var(--Font_Mono);
+    text-shadow: 0 0 6px rgba(5, 255, 5, 0.2);
+}
+
+.Primary_Color {
+    color: var(--Primary);
+    font-family: var(--Font_Mono);
+}
+
+#Page_Loc {
+    color: var(--Page_Loc_Color);
+    font-family: var(--Font_Mono);
+    text-shadow: 0 0 8px rgba(255, 166, 0, 0.3);
+}
+
+.Red_Color {
+    color: var(--Red);
+    font-family: var(--Font_Mono);
+    text-shadow: 0 0 6px rgba(255, 37, 37, 0.2);
+}
+
+#Sys_Logs {
+    padding: 30px 0;
+    font-size: larger;
+    font-family: var(--Font_Mono);
+    line-height: 2.2;
+    animation: Fade_In_Up_404 0.6s var(--Ease_Out_Expo) 0.4s both;
+}
+
+@media (max-width: 768px) {
+    #Not_Found_Box_Header {
+        width: 98%;
+        border-top-left-radius: var(--Radius_SM);
+        border-top-right-radius: var(--Radius_SM);
+    }
+
+    #Not_Found_Box {
+        width: 98%;
+        height: auto;
+        min-height: 65vh;
+        padding: 20px 18px;
+        font-size: small;
+        border-bottom-left-radius: var(--Radius_SM);
+        border-bottom-right-radius: var(--Radius_SM);
+    }
+
+    #Not_Found_Box_Heading {
+        font-size: 1.3rem;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    #Connection_Message {
+        font-size: 1rem;
+        padding: 0 0 0 20px;
+    }
+
+    #Sys_Logs {
+        font-size: medium;
+        line-height: 1.8;
+    }
+
+    #Error_Text {
+        font-size: 8px;
+        letter-spacing: 0.12em;
+    }
+}
+
+@media (max-width: 480px) {
+    #Full_Error_Box {
+        padding: 10px 0;
+    }
+
+    #Not_Found_Box {
+        padding: 15px 12px;
+        width: 100%;
+    }
+
+    #Not_Found_Box_Header {
+        width: 100%;
+    }
+
+    #Not_Found_Box_Heading {
+        font-size: 1.05rem;
+    }
+
+    #Connection_Message {
+        font-size: 0.85rem;
+        padding: 0 0 0 12px;
+    }
+
+    #Sys_Logs {
+        font-size: small;
+        line-height: 1.6;
+    }
+}

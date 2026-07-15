@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Cracker | Bruteforce Engine</title>
+    <link rel="icon" type="image/png" href="Files/Assets/favicon.png">
+    <link rel="stylesheet" href="Files/CSS/style.css">
+</head>
+<body>
+    <div class="Main_Container">
+        <div class="Header_Section">
+            <h1 class="Main_Title">Bruteforce Engine</h1>
+            <p class="Sub_Title">Advanced Password Cracking Simulator</p>
+        </div>
+
+        <div class="Input_Section">
+            <input type="text" id="Password_Input" class="Password_Input_Field" placeholder="Enter Target Password" autocomplete="off">
+            <select id="Char_Set_Selector" class="Char_Set_Dropdown">
+                <option value="All_Mix">All Mix (Default)</option>
+                <option value="Numbers_Only">Numbers Only</option>
+                <option value="Alphabet_Both">Alphabets (Upper & Lower)</option>
+                <option value="Alphabet_Upper">Alphabets (Uppercase Only)</option>
+                <option value="Alphabet_Lower">Alphabets (Lowercase Only)</option>
+                <option value="Special_Only">Special Characters Only</option>
+                <option value="Mix_Num_Alphabet_Both">Numbers & Alphabets (Both)</option>
+                <option value="Mix_Num_Alphabet_Upper">Numbers & Alphabets (Uppercase)</option>
+                <option value="Mix_Num_Alphabet_Lower">Numbers & Alphabets (Lowercase)</option>
+                <option value="Mix_Alphabet_Special">Alphabets & Special Characters</option>
+            </select>
+            <input type="file" id="File_Input" class="File_Input_Field" accept=".txt">
+            <div class="Button_Group">
+                <button id="Start_Button" class="Action_Button Start_Action">Initiate Crack</button>
+                <button id="Stop_Button" class="Action_Button Stop_Action">Terminate</button>
+            </div>
+        </div>
+
+        <div class="Display_Section">
+            <div class="Status_Display">
+                <h2 id="Status_Text">System Status : Awaiting Input</h2>
+            </div>
+            
+            <div class="Metrics_Grid">
+                <div class="Metric_Card">
+                    <p class="Metric_Label">Time Elapsed</p>
+                    <p id="Time_Display" class="Metric_Value">00:00:00.000</p>
+                </div>
+                
+                <div class="Metric_Card">
+                    <p class="Metric_Label">Total Attempts</p>
+                    <p id="Attempts_Display" class="Metric_Value">0</p>
+                </div>
+
+                <div class="Metric_Card">
+                    <p class="Metric_Label">Guesses / Sec</p>
+                    <p id="Speed_Display" class="Metric_Value">0</p>
+                </div>
+            </div>
+
+            <div class="Current_Guess_Container">
+                <p class="Metric_Label">Current Hash / Guess</p>
+                <p id="Guess_Display" class="Guess_Value">----</p>
+            </div>
+            
+            <div class="Footer_Links">
+                <a href="Dict_Maker/index.html" class="Footer_Link">Open Dictionary Maker Tool</a>
+            </div>
+        </div>
+    </div>
+    <script src="Files/JS/script.js"></script>
+</body>
+</html>
